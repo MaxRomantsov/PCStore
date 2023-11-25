@@ -4,8 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCStore.Web", "PCStore.Web\PCStore.Web.csproj", "{C1E69870-3FFE-47F3-97D7-0BC29866B2B3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7A0C56CA-5287-424F-810A-B9628FD23A90} = {7A0C56CA-5287-424F-810A-B9628FD23A90}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCStore.Infrastructure", "PCStore.Infrastructure\PCStore.Infrastructure.csproj", "{A9CCF548-DA86-4708-AA02-D61AD17A8BB9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7A0C56CA-5287-424F-810A-B9628FD23A90} = {7A0C56CA-5287-424F-810A-B9628FD23A90}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCStore.Core", "PCStore.Core\PCStore.Core.csproj", "{7A0C56CA-5287-424F-810A-B9628FD23A90}"
 EndProject

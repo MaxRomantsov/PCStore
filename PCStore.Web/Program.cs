@@ -1,7 +1,12 @@
+using PCStore.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+string connStr = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext(connStr);
 
 var app = builder.Build();
 
