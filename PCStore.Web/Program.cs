@@ -1,4 +1,5 @@
 using PCStore.Infrastructure;
+using PCStore.Infrastructure.Initializers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,8 @@ builder.Services.AddControllersWithViews();
 
 string connStr = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext(connStr);
+
+builder.Services.AddInfrastructureService();
 
 var app = builder.Build();
 
@@ -28,5 +31,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+await UsersAndRolesInitializer.SeedUsersAndRoles(app);
 
 app.Run();
