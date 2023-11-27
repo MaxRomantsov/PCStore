@@ -4,8 +4,8 @@
 @using X.PagedList;
 @model IPagedList<GoodDto>
 @{
-    ViewData["Title"] = "Home page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Goods";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 <div class="content-wrapper">
     <section class="content-header">
@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <form method="post" asp-action="Search" asp-controller="Home">
+                    <form method="post" asp-action="Search" asp-controller="Good">
                         <div class="input-group input-group-lg">
                             <input type="search" name="searchString" class="form-control form-control-lg" placeholder="Search...">
                             <div class="input-group-append">
@@ -58,7 +58,10 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="float-right mb-4">
-                                            <a asp-controller="Home" asp-action="GoodDetail" asp-route-id="@item.Id" class="btn btn-block btn-primary d-inline">More</a>
+
+                                            <a asp-controller="Good" asp-action="Edit" asp-route-id="@item.Id" asp-route-slug="@item.Slug" class="btn btn-block btn-warning d-inline">Edit</a>
+                                            <a asp-controller="Good" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-block btn-danger d-inline">Delete</a>
+                                            <a asp-controller="Good" asp-action="PostDetail" asp-route-id="@item.Id" class="btn btn-block btn-primary d-inline">More</a>
                                         </div>
                                     </div>
                                 </div>

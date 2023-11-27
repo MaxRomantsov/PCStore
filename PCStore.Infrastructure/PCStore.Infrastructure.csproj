@@ -16,8 +16,8 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.14" />
   </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\PCStore.Core\PCStore.Core.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCStore.Core\PCStore.Core.csproj" />
+  </ItemGroup>
 
 </Project>

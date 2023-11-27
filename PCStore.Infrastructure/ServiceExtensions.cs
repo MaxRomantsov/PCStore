@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using PCStore.Core.Entities.User;
+using PCStore.Core.Interfaces;
+using PCStore.Infrastructure.Repository;
 
 namespace PCStore.Infrastructure
 {
@@ -39,6 +41,10 @@ namespace PCStore.Infrastructure
             })
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
+        }
+        public static void AddRepositories(this IServiceCollection services)
+        {
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }
     }
 }

@@ -19,4 +19,8 @@
     <ProjectReference Include="..\PCStore.Core\PCStore.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\goods\" />
+  </ItemGroup>
+
 </Project>

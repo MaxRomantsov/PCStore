@@ -1,3 +1,4 @@
+using PCStore.Core;
 using PCStore.Infrastructure;
 using PCStore.Infrastructure.Initializers;
 
@@ -9,7 +10,13 @@ builder.Services.AddControllersWithViews();
 string connStr = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext(connStr);
 
+builder.Services.AddCoreServices();
+
 builder.Services.AddInfrastructureService();
+
+builder.Services.AddRepositories();
+
+builder.Services.AddMapping();
 
 var app = builder.Build();
 
