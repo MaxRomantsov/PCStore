@@ -11,9 +11,11 @@ namespace PCStore.Core.DTO_s.Good
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
+        public string Price { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public string FullText { get; set; } = string.Empty;
-        public string PublishDate { get; set; } = string.Empty;
+        public string Specs { get; set; } = string.Empty;
+        public string Producer { get; set; } = string.Empty;
+
         private string? _imagePath;
         public string? ImagePath
         {

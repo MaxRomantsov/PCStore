@@ -7,6 +7,15 @@
     ViewData["Title"] = "Home page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .looplist {
+        display: grid;
+        grid-gap: 0px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        position: relative;
+        clear: both;
+    }
+</style>
 <div class="content-wrapper">
     <section class="content-header">
         <div class="container-fluid">
@@ -30,36 +39,28 @@
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col-md-10 offset-md-1">
-                    <div class="list-group">
+                <div>
+                    <div class="looplist">
                         @foreach (var item in Model)
                         {
-                            <div class="list-group-item mb-5">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        @if (item.ImagePath == "Default.png")
-                                        {
-                                            <img class="img-fluid" src="~/images/goods/Default.png" alt="Photo" style="max-height: 160px;">
-                                        }
-                                        else
-                                        {
-                                            <img class="img-fluid" src="~/images/goods/@item.ImagePath" alt="Photo" style="max-height: 160px;">
-                                        }
-                                    </div>
-                                    <div class="col px-4 mb-4">
-                                        <div class="mb-2">
-                                            <div class="float-right">@item.PublishDate</div>
-                                            <h3>@item.Title</h3>
-                                            <p class="mb-0">@Html.Raw(@item.Description)</p>
-                                        </div>
-                                        <a asp-controller="Good" asp-action="GoodsByCategory" asp-route-id="@item.CategoryId" class="btn btn-default btn-sm">@item.CategoryName</a>
-                                    </div>
+                            <div class="card" style="width: 18rem;">
+                                <div class="col-auto">
+                                    @if (item.ImagePath == "Default.png")
+                                    {
+                                        <img class="card-img-top" src="~/images/goods/Default.png" alt="Photo" style="max-height: 160px;">
+                                    }
+                                    else
+                                    {
+                                        <img class="card-img-top" src="~/images/goods/@item.ImagePath" alt="Photo" style="max-height: 160px;">
+                                    }
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="float-right mb-4">
-                                            <a asp-controller="Home" asp-action="GoodDetail" asp-route-id="@item.Id" class="btn btn-block btn-primary d-inline">More</a>
-                                        </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">@item.Title</h3>
+                                    <h4 class="card-text text-muted">@item.Price UAH</h4>
+                                    <p class="card-text">@Html.Raw(@item.Description)</p>
+                                    <a asp-controller="Good" asp-action="GoodsByCategory" asp-route-id="@item.CategoryId" class="btn btn-default btn-sm">@item.CategoryName</a>
+                                    <div class="float-right mb-2 mt-4">
+                                        <a asp-controller="Home" asp-action="GoodDetail" asp-route-id="@item.Id" class="btn btn-block btn-primary d-inline">More</a>
                                     </div>
                                 </div>
                             </div>

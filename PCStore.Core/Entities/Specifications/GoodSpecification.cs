@@ -43,7 +43,7 @@ namespace PCStore.Core.Entities.Specifications
             {
                 Query
                     .Include(p => p.Category)
-                    .Where(p => p.Title.Contains(searchString) || p.FullText.Contains(searchString)).OrderByDescending(x => x.Id);
+                    .Where(p => p.Title.Contains(searchString) || p.Producer.Contains(searchString)).OrderByDescending(x => x.Id);
             }
         }
     }

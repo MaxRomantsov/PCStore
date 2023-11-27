@@ -37,25 +37,26 @@
                             <span class="text-danger mt-3">@ViewBag.CreatePostError</span>
                         }
                         <form method="post" asp-controller="Good" asp-action="Edit" enctype="multipart/form-data">
-                            <input type="hidden" asp-for="@Model.PublishDate">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Title</label>
                                     <input type="text" asp-for="@Model.Title" class="form-control" placeholder="Title">
                                 </div>
                                 <div class="form-group">
-                                    <label>Description</label>
-                                    <div class="card-body">
-                                        <textarea asp-for="@Model.Description" id="summernote">Place <em>some</em> <u>post description</u> <strong>here</strong>
-                                        </textarea>
-                                    </div>
+                                    <label>Description</label>                                  
+                                        <input type="text" asp-for="@Model.Description" class="form-control" placeholder="Description">                                  
                                 </div>
                                 <div class="form-group">
-                                    <label>Text</label>
-                                    <div class="card-body">
-                                        <textarea asp-for="@Model.FullText" id="text">Place <em>some</em> <u>text</u> <strong>here</strong>
-                                        </textarea>
-                                    </div>
+                                    <label>Price</label>                                   
+                                        <input type="text" asp-for="@Model.Price" class="form-control" placeholder="Price">                                  
+                                </div>
+                                <div class="form-group">
+                                    <label>Specs</label>                                    
+                                        <input type="text" asp-for="@Model.Specs" class="form-control" placeholder="Specs">                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>Producer</label> 
+                                        <input type="text" asp-for="@Model.Producer" class="form-control" placeholder="Producer">
                                 </div>
                                 <div class="form-group">
                                     <label for="Category">Category</label>

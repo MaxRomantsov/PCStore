@@ -59,16 +59,24 @@
                                             <input type="text" asp-for="@Model.Title" class="form-control" placeholder="Title" />
                                         </div>
                                         <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea id="summernote" type="text" asp-for="@Model.Description" class="form-control">Place <em>your</em> <u>post</u> <string>heare...</string></textarea>
+                                            <label>Price</label>
+                                            <input type="text" asp-for="@Model.Price" class="form-control" placeholder="Price" />
                                         </div>
                                         <div class="form-group">
-                                            <label>Text</label>
-                                            <textarea id="text" type="text" asp-for="@Model.FullText" class="form-control">Place <em>your</em> <u>post</u> <string>heare...</string></textarea>
+                                            <label>Description</label>
+                                            <input type="text" asp-for="@Model.Description" class="form-control" placeholder="Description" />
                                         </div>
                                         <div class="form-group">
                                             <label>Category</label>
                                             <select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="custom-select form-control-border"></select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Specs</label>
+                                            <input type="text" asp-for="@Model.Specs" class="form-control" placeholder="Specs" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Producer</label>
+                                            <input type="text" asp-for="@Model.Producer" class="form-control" placeholder="Producer" />
                                         </div>
                                         <div class="form-group">
                                             <label>Image</label>

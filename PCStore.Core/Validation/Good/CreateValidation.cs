@@ -14,7 +14,9 @@ namespace PCStore.Core.Validation.Good
         {
             RuleFor(r => r.Title).NotEmpty();
             RuleFor(r => r.Description).NotEmpty();
-            RuleFor(r => r.FullText).NotEmpty();
+            RuleFor(r => r.Price).NotEmpty();
+            RuleFor(r => r.Producer).NotEmpty();
+            RuleFor(r => r.Specs).NotEmpty();
             RuleFor(r => r.CategoryId).NotEmpty();
         }
     }

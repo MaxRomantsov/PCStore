@@ -48,10 +48,6 @@ namespace PCStore.Core.Services
             {
                 model.ImagePath = "Default.png";
             }
-
-            DateTime currentDate = DateTime.Today;
-            string formatedDate = currentDate.ToString("d");
-            model.PublishDate = formatedDate;
             await _goodRepo.Insert(_mapper.Map<Good>(model));
             await _goodRepo.Save();
         }
