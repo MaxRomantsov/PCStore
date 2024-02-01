@@ -93,13 +93,13 @@ namespace PCStore.Web.Controllers
                 return View();
             }
 
-            List<GoodDto> posts = await _goodService.GetByCategory(id);
+            List<GoodDto> goods = await _goodService.GetByCategory(id);
             ViewBag.CategoryName = categoryDto.Name;
             ViewBag.CategoryId = categoryDto.Id;
 
             int pageSize = 20;
             int pageNumber = 1;
-            return View("Delete", posts.ToPagedList(pageNumber, pageSize));
+            return View("Delete", goods.ToPagedList(pageNumber, pageSize));
         }
 
         [Authorize(Roles = "administrator")]

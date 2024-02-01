@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using PCStore.Core.DTO_s.User;
 using PCStore.Core.Entities.User;
 using System;
@@ -13,11 +14,14 @@ namespace PCStore.Core.Services
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly IMapper _mapper;
 
-        public UserService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+
+        public UserService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _mapper = mapper;
         }
 
         public async Task<ServiceResponse> LoginUserAsync(LoginUserDto model)
@@ -66,6 +70,6 @@ namespace PCStore.Core.Services
                 Success = false,
                 Message = "User or password incorrect."
             };
-        }
+        }        
     }
 }

@@ -1,0 +1,42 @@
+﻿@using PCStore.Core.DTO_s.Good;
+@model GoodDto
+@{
+    ViewData["Title"] = "Good Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/dashboard/plugins/summernote/summernote-bs4.min.css">
+}
+<div class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            @if (@Model.ImagePath == "Default.png")
+                            {
+                                <img src="~/images/goods/Default.png" alt="Photo">
+                            }
+                            else
+                            {
+                                <img src="~/images/goods/@Model.ImagePath" alt="Photo">
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="mt-4 mb-3">
+                                <h5 class="text-uppercase">@Model.Title</h5>
+                                <div class="price d-flex flex-row align-items-center">
+                                    <span class="act-price">@Model.Price UAH</span>
+                                </div>
+                            </div>
+                            <p class="about">@Model.Description</p>
+                            <p>@Model.Specs</p>
+                            <p>Producer:@Model.Producer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

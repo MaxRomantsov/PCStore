@@ -15,5 +15,6 @@ namespace PCStore.Core.Interfaces
         Task Create(GoodDto model);
         Task Update(GoodDto model);
         Task Delete(int id);
+        Task<List<GoodDto>> Search(string searchString);
     }
 }

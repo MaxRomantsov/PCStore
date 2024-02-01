@@ -124,5 +124,10 @@ namespace PCStore.Core.Services
             await _goodRepo.Delete(id);
             await _goodRepo.Save();
         }
+        public async Task<List<GoodDto>> Search(string searchString)
+        {
+            var result = await _goodRepo.GetListBySpec(new Goods.Search(searchString));
+            return _mapper.Map<List<GoodDto>>(result);
+        }
     }
 }

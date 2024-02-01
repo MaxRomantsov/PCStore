@@ -47,11 +47,11 @@
                                 <div class="col-auto">
                                     @if (item.ImagePath == "Default.png")
                                     {
-                                        <img class="card-img-top" src="~/images/goods/Default.png" alt="Photo" style="max-height: 160px;">
+                                        <a asp-controller="Home" asp-action="GoodDetail" asp-route-id="@item.Id"><img class="card-img-top" src="~/images/goods/Default.png" alt="Photo" style="max-height: 160px;"></a>
                                     }
                                     else
                                     {
-                                        <img class="card-img-top" src="~/images/goods/@item.ImagePath" alt="Photo" style="max-height: 160px;">
+                                        <a asp-controller="Home" asp-action="GoodDetail" asp-route-id="@item.Id"> <img class="card-img-top" src="~/images/goods/@item.ImagePath" alt="Photo" style="max-height: 160px;"></a>
                                     }
                                 </div>
                                 <div class="card-body">
@@ -59,9 +59,6 @@
                                     <h4 class="card-text text-muted">@item.Price UAH</h4>
                                     <p class="card-text">@Html.Raw(@item.Description)</p>
                                     <a asp-controller="Good" asp-action="GoodsByCategory" asp-route-id="@item.CategoryId" class="btn btn-default btn-sm">@item.CategoryName</a>
-                                    <div class="float-right mb-2 mt-4">
-                                        <a asp-controller="Home" asp-action="GoodDetail" asp-route-id="@item.Id" class="btn btn-block btn-primary d-inline">More</a>
-                                    </div>
                                 </div>
                             </div>
                         }
